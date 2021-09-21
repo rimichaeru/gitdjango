@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block body %}
+
+{% if user.is_authenticated %}
+<h3>Welcome {{user.username}}</h3>
+
+<ul>
+    <li><a href="/account/details">View Account Details</a></li>
+    <li><a href="/account/logout">Logout</a></li>
+</ul>
+
+
+
+{% else %}
+<h3>You are not authenticated</h3>
+<a href="{% url 'social:begin' 'github' %}">Sign In with GitHub</a>
+{% endif %}
+
+{% endblock %}

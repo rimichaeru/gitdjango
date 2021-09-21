@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %} Update Details {% endblock %}
+
+{% block body %}
+
+    {% if user.is_authenticated %}
+        <form action="{% url 'update' %}" method='GET'>
+            {% csrf_token %}
+            <button type='submit'>Update Company</button>
+        </form>
+
+        <h3>Welcome {{user.username}}</h3>
+        {{key}}
+
+        {% for i in data %}
+        <p>{{i}}</p>
+    {% endfor %}
+
+    {% else %}
+        <h3>You are not authenticated</h3>
+    {% endif %}
+
+{% endblock %}
