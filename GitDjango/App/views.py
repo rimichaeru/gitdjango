@@ -1,33 +1,10 @@
 from django.shortcuts import render
-from django.contrib.auth import authenticate, login
-from .form import LoginForm
-from django.http import HttpResponse
 import requests
 from django.contrib.auth.models import User
 import json
 
 
 # Create your views here.
-
-# def login_user(request):
-#     if request.method == 'POST':
-#         form = LoginForm(request.POST)
-#
-#         if form.is_valid():
-#             clean_data = form.cleaned_data
-#             user = authenticate(request, username=clean_data['username'], password=clean_data['password'])
-#
-#             if user is not None:
-#                 login(request, user)
-#                 return HttpResponse('Authentication successful')
-#             else:
-#                 return HttpResponse('Authentication failed')
-#
-#     else:
-#         form = LoginForm()
-#
-#     return render(request, 'login.html', {'form': form})
-
 
 # handles viewing and editing of profile data
 def details(request):

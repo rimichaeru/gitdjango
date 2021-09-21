@@ -6,6 +6,9 @@
 
     {% if user.is_authenticated %}
         <h1>Welcome {{user.username}}</h1>
+        <a href="/account/logout">Logout</a>
+        <br />
+        <br />
 
         <form action="/account/details" method='GET'>
             {% csrf_token %}
@@ -15,10 +18,13 @@
                 <br />
             {% endfor %}
 
-            <button type='submit'>Update Profile</button>
+            <br />
+            <br />
+            <button type='submit' style="padding: 20px; margin-left: 20%;">Update Profile</button>
         </form>
 
-        <p style="margin-left: 16%"> ------------------------------------------------------------- </p>
+        <br />
+        <p> ---------------------------------------------------------------------------------------------------------------------------------------------------------- </p>
 
         {% for i in non_editable_data %}
             <p><b>{{i}}:</b> {{non_editable_data|get_item:i}}</p>
