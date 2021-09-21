@@ -5,17 +5,24 @@
 {% block body %}
 
     {% if user.is_authenticated %}
-        <form action="{% url 'update' %}" method='GET'>
+        <h1>Welcome {{user.username}}</h1>
+
+        <form action="/account/details" method='GET'>
             {% csrf_token %}
-            <button type='submit'>Update Company</button>
+            {% for i in editable_data %}
+                <p><b>{{i}}:</b> {{editable_data|get_item:i}}</p>
+                <input type="text" name="{{i}}" placeholder="Set {{i}}"/>
+                <br />
+            {% endfor %}
+
+            <button type='submit'>Update Profile</button>
         </form>
 
-        <h3>Welcome {{user.username}}</h3>
-        {{key}}
+        <p style="margin-left: 16%"> ------------------------------------------------------------- </p>
 
-        {% for i in data %}
-        <p>{{i}}</p>
-    {% endfor %}
+        {% for i in non_editable_data %}
+            <p><b>{{i}}:</b> {{non_editable_data|get_item:i}}</p>
+        {% endfor %}
 
     {% else %}
         <h3>You are not authenticated</h3>
