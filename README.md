@@ -6,7 +6,7 @@ For Windows, other systems may differ.
 <br />
 
 #### Create the virtual environment & install dependencies
-1. After cloning the repo (eg. git clone REPOHTTPS), cd into the repo and run your terminal in this directory.
+1. After cloning the repo (eg. git clone REPOHTTPS), cd into the repo using your terminal.
 2. Create a new python environment in the terminal with: virtualenv env
 3. Activate the new environment with: source env/Scripts/activate
 4. Install dependencies automatically from the requirements file: pip install -r requirements.txt
@@ -36,5 +36,8 @@ Authorization callback URL: http://localhost:8000/
 8. After <i>SOCIAL_AUTH_GITHUB_KEY=</i> insert your Client ID, and after <i>SOCIAL_AUTH_GITHUB_SECRET=</i> insert your newly generated Client secret, without any spaces
 
 #### Running the server
-1. In the terminal, with the local python env running, cd into /GitDjango (where manage.py is)
-2. Run: python manage.py runserver
+1. In the terminal, with the local python env running, cd into GitDjango/ (where manage.py is)
+2. Run: python manage.py migrate
+3. Run: python manage.py runserver
+4. In your browser go to: http://localhost:8000/
+5. And finally follow the on-screen login flow!
