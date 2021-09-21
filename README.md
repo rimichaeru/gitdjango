@@ -40,4 +40,4 @@ Authorization callback URL: http://localhost:8000/
 2. Run: python manage.py migrate
 3. Run: python manage.py runserver
 4. In your browser go to: http://localhost:8000/
-5. And finally follow the on-screen login flow!
+5. And finally follow the on-screen login flow! (remember to delete the OAuth app at https://github.com/settings/developers when you are done)
